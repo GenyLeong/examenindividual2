@@ -1,0 +1,15 @@
+include ../helpers/mixins.jade
+section
+  .container-fluid
+    .row
+      .col-xs-12.col-sm-6.col-md-6
+        .photo
+      .col-xs-12.col-sm-6.col-md-6
+        .row
+          .col-xs-4
+            h1 Services
+            h1 We Provide
+        p= loremipsum
+        +services('service1')
+        +services('service2')
+        +services('service3')

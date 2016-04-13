@@ -1,0 +1,15 @@
+include ../helpers/mixins.jade
+section
+  .container-fluid
+    .row
+      .col-xs-4
+        h1 Meet
+        h1 The Team
+    .row
+      .col-xs-12.col-sm-6.col-md-6.pd-0
+        +team-group('team1')
+        +team-group('team2').pull-right.pd-0
+      .col-xs-12.col-sm-6.col-md-6.pd-0
+        +team-group('team3').pd-0
+        +team-group('team4').pull-right.pd-0
+        

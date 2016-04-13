@@ -1,0 +1,30 @@
+.v-top{
+	display: flex;
+	justify-content:center;
+}
+
+.v-center{
+	@extend .v-top;
+	align-items:center;
+}
+
+.allh{
+	height: 100% !important;
+}
+
+html, body, header{
+	@extend .allh;
+}
+
+.wt-xs {
+    background-color: rgba(0,0,0,0.5);
+    min-height: 400px;
+}
+
+.mg-0{
+	margin:0px;
+}
+
+.pd-0{
+	padding: 0px;
+}

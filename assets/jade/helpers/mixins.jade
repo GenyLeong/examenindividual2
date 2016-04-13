@@ -1,0 +1,127 @@
+mixin nav(name, id, style)
+ - var style = (typeof style === 'undefined') ? "default" : style
+  nav( role="navigation", class=["navbar", "navbar-" + style] )
+   .navbar-header
+    button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#" + id, aria-expanded="false", aria-controls="navbar")
+     span.sr-only Toggle navigation
+     span.icon-bar
+     span.icon-bar
+     span.icon-bar
+    a.navbar-brand
+      img(src="assets/images/w-logo.jpg")= name
+   .collapse.navbar-collapse( id=id )
+    ul.nav.navbar-nav.navbar-right
+     block
+ 
+mixin nav_item(href, active)
+ li(class=active): a( href=href )
+  block
+ 
+mixin nav_item_dropdown(href, active)
+ li(class=["dropdown", active])
+  a.dropdown-toggle( href=href, data-toggle="dropdown", role="button", aria-expanded="false" )= attributes.label
+   span.caret
+  ul.dropdown-menu( role="menu" )
+   block
+ 
+mixin nav_divider
+ li.divider
+ 
+mixin nav_header
+ li.dropdown-header
+  block
+
+mixin button(style, href, size)
+ - var style = (typeof style === 'undefined') ? "default" : style
+  - var href = (typeof href === 'undefined') ? "#" : href
+   case size
+    when "large"
+     - size = "btn-lg"
+    when "small"
+     - size = "btn-sm"
+    when "mini"
+     - size = "btn-xs"
+ 
+   a( class=["btn", "btn-" + style, size], href=href )
+        block
+
+- var loremipsum = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam rerum, id. Hic quisquam similique atque. Alias atque accusantium perspiciatis, totam?"
+- var lorem15 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sed numquam neque placeat ea, nam."
+
+mixin images-services(service)
+ case service
+  when 'service1'
+   img.service-group(src="assets/images/online-store15.png")
+  when 'service2'
+   img.service-group(src="assets/images/online-store15.png")
+  when 'service3'
+   img.service-group(src="assets/images/online-store15.png")
+
+mixin services(service)
+  .row
+    .col-xs-12.col-sm-4
+      +images-services(service)
+    .col-xs-12.col-sm-8
+      p=loremipsum
+
+mixin team-group(imagesteam)
+ case imagesteam
+  when 'team1'
+    .row.mg-0
+      .col-xs-6.pd-0
+        img.team-group(src="assets/images/member7.jpg")
+      .col-xs-6(class!=attributes.class)
+        p=lorem15
+  when 'team2'
+    .row.mg-0
+      .col-xs-6(class!=attributes.class)
+        img.team-group(src="assets/images/member8.jpg")
+      .col-xs-6
+        p=lorem15
+  when 'team3'
+    .row.mg-0
+      .col-xs-6(class!=attributes.class)
+        img.team-group(src="assets/images/member9.jpg")
+      .col-xs-6
+        p=lorem15
+  when 'team4'
+    .row.mg-0
+      .col-xs-6(class!=attributes.class)
+        img.team-group(src="assets/images/member10.jpg")
+      .col-xs-6
+        p=lorem15
+
+mixin form
+ .col-xs-12.col-sm-8.col-md-8
+  form(role="form")
+   .form-group
+    block
+
+mixin field(type, name, placeholder)
+ input(type=type, name=name, placeholder=placeholder, class!=attributes.class)
+
+mixin card 
+  .col-xs-6.col-sm-6.col-md-3
+        .card
+          .title
+            h3.text-center Starter
+            h1.text-center $50 /mo
+          .row
+            .col-xs-6.v-center
+              .offers
+                img.emoticon.block-center(src="assets/images/man88.png")
+                p 20 users
+            .col-xs-6.v-center
+              .offers
+                img.emoticon.block-center(src="assets/images/man88.png")
+                p 20 users
+          .row
+            .col-xs-6.v-center
+              .offers
+                img.emoticon.block-center(src="assets/images/man88.png")
+                p 20 users
+            .col-xs-6.v-center
+              .offers
+                img.emoticon.block-center(src="assets/images/man88.png")
+                p 20 users
+          +button("default center-block", "success.html", "large") Success

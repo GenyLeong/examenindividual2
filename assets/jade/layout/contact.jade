@@ -1,0 +1,40 @@
+include ../helpers/mixins.jade
+section
+  .container-fluid
+    .row
+      .col-xs-4
+        h1 Our Best
+        h1 Offers
+    .row
+      p=lorem15
+      +form
+        +field('text', 'name', 'YOUR NAME*')(class="name form-control")
+        +field('email', 'email', 'YOUR EMAIL*')(class="email form-control")
+        +field('text', 'pass', 'YOUR PHONE*')(class="password form-control")
+        textarea(class="form-control", rows="8", placeholder="YOUR MESSAGE*")
+        input(type='submit', value='Sign Up')(class="submit")
+      .col-xs-12.col-sm-4.col-md-4
+        h5 
+          b CONTACT INFO
+        p  Lorem ipsum dolor.
+        p  Lorem ipsum dolor sit amet.
+        h5
+          b EMAIL:
+            span yourmail@mail.com
+        h5
+          b PHONE:
+            span 858238572398
+        h5
+          b FAX:
+            span 24923085720394
+        h5
+          b CONNECT WITH US
+        a(href="").glyphicon.glyphicon-chevron-down
+        span Our Company Mission
+        hr.separador
+        a(href="").glyphicon.glyphicon-chevron-down
+        span Our Company Mission
+        hr.separador
+        a(href="").glyphicon.glyphicon-chevron-down
+        span Our Company Mission
+        hr.separador
